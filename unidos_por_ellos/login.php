@@ -110,7 +110,10 @@ unset($_SESSION['exito_login']);
         </div>
 
         <p class="text-center mt-3" style="font-size: 0.9rem;">
-            ¿Olvidaste tu contraseña? <a href="recuperar.php" style="color: var(--celeste-hover); font-weight: bold;">Recupérala aquí</a>
+            ¿Olvidaste tu contraseña? <a href="recuperar.php" class="link-accion">Recupérala aquí</a>
+        </p>
+        <p class="text-center mt-3" style="font-size: 0.9rem;">
+            ¿No tienes cuenta? <a href="registro.php" class="link-accion">Regístrate aquí</a>
         </p>
     </div>
 </main>

@@ -103,7 +103,7 @@ unset($_SESSION['form_values_registro']);
         </form>
 
         <p class="text-center mt-3" style="font-size: 0.9rem;">
-            ¿Ya tienes una cuenta? <a href="login.php" style="color: var(--celeste-hover); font-weight: bold;">Inicia sesión aquí</a>
+            ¿Ya tienes una cuenta? <a href="login.php" class="link-accion">Inicia sesión aquí</a>
         </p>
     </div>
 </main>
