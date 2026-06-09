@@ -14,14 +14,9 @@ session_start();
 <header>
     <div class="header-container">
         <div class="site-logo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="4.5" cy="9.5" r="2" />
-                <circle cx="9" cy="5.5" r="2" />
-                <circle cx="15" cy="5.5" r="2" />
-                <circle cx="19.5" cy="9.5" r="2" />
-                <path d="M12 10.5c-1.8 0-3.5 1.5-3.5 3.5s2.5 5 3.5 6c1-1 3.5-4 3.5-6s-1.7-3.5-3.5-3.5z"/>
-            </svg>
-            <span class="site-title">Fundación Unidos por Ellos</span>
+            <a href="index.php">
+                <img src="assets/logo-unidos-por-ellos.png" alt="Logo Fundación Unidos por Ellos" class="site-logo-img">
+            </a>
         </div>
         
         <div class="search-box-container">

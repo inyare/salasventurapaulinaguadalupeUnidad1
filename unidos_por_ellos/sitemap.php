@@ -55,9 +55,6 @@ session_start();
 <main>
     <section class="section-block yellow-border">
         <h2 class="section-title">Mapa del Sitio (Sitemap)</h2>
-        <p class="text-center mb-3" style="color: #666; max-width: 700px; margin: 0 auto 30px;">
-            Estructura jerárquica de contenidos para facilitar la navegación y comprensión del sitio web.
-        </p>
 
         <div class="sitemap-container">
             <!-- Categoría 1: Secciones Principales -->
