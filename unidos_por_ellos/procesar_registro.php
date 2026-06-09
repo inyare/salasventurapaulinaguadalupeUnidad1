@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'Usuario.php';
+require_once 'config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'] ?? '';
@@ -30,12 +31,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Simular registro en la sesión
-    $_SESSION['usuario_registrado'] = [
-        'nombre' => $nombre,
-        'email' => $email,
-        'password' => $password // En un proyecto real se usaría password_hash, pero para proyecto universitario básico se mantiene simple
-    ];
+// Verificar si el correo ya existe
+$sql = "SELECT id FROM usuarios WHERE email = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->execute([$email]);
+
+if ($stmt->rowCount() > 0) {
+    $_SESSION['errores_registro'] = ["Ya existe una cuenta con ese correo."];
+    header("Location: registro.php");
+    exit();
+}
+
+// Guardar usuario en la base de datos
+$sql = "INSERT INTO usuarios (nombre, email, password)
+        VALUES (?, ?, ?)";
+
+$stmt = $conexion->prepare($sql);
+
+$stmt->execute([
+    $nombre,
+    $email,
+    password_hash($password, PASSWORD_DEFAULT)
+]);
 
     // Limpiar formulario y errores
     unset($_SESSION['form_values_registro']);
